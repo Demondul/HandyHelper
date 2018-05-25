@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Edit Account</title>
+    {%load static%}
+    <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/position.css" %}">
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <div class="col-sm-6 left">
+                <h3>Add a Job</h3>
+            </div>
+            <div class="col-sm-2 right">
+                <a href="/home">Back</a> 
+            </div>
+            <div class="col-sm-2 right">
+                <a href="/logout">Logout</a> 
+            </div>
+        </div>
+        <div class="left col-sm-6">
+            <form action='/save' method='POST'>
+                {% csrf_token %}
+                Title: <input type="text" name="txtTitle" class="form-control input-sm chat-input"/>
+                </br>
+                Description: <input type="text" name="txtDesc" class="form-control input-sm chat-input"/>
+                </br>
+                Location: <input type="text" name="txtLoc" class="form-control input-sm chat-input"/>
+                </br>
+                <input type="submit" class="btn" name="btnSubmit" value="Submit" name="btnSubmit">
+            </form>
+        </div>
+        <div class="right col-sm-4">
+                {% if messages %}
+                {% for message in messages %}
+                    <ul class="messages">
+                        <li class="alert alert-danger">{{ message }}</li>
+                    </ul>
+                {% endfor %}
+                {% endif %}
+        </div>
+    </div>
+</body>
+</html>

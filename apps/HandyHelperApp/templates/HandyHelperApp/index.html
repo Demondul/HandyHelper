@@ -1,0 +1,49 @@
+<html>
+    <head>
+        {%load static%}
+        <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.css" %}">
+        <link rel="stylesheet" type="text/css" href="{% static "css/position.css" %}">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Login and Registration</h1>
+            <div class="registration col-sm-6">
+                <h2>Registration</h2>
+                <form action='/register' method='POST'>
+                    {% csrf_token %}
+                    First name: <input type="text" id="fName" name="txtFirst" class="form-control input-sm chat-input" />
+                    </br>
+                    Last name: <input type="text" id="lName" name="txtLast" class="form-control input-sm chat-input" />
+                    </br>
+                    Email: <input type="email" id="email" name="txtEmail" class="form-control input-sm chat-input" />
+                    </br>
+                    Password: <input type="password" id="pWord" name="txtPWord" class="form-control input-sm chat-input" />
+                    </br>
+                    Confirm password: <input type="password" id="conPWord" name="txtConWord" class="form-control input-sm chat-input" />
+                    </br>
+                    <input type="submit" class="btn btn-btn-default btnToRight" name="btnSubmit" value="register" name="btnRegister">
+                </form>
+            </div>
+            <div class="error col-sm-4">
+                {% if messages %}
+                {% for message in messages %}
+                    <ul class="messages">
+                        <li class="alert alert-danger">{{ message }}</li>
+                    </ul>
+                {% endfor %}
+                {% endif %}
+            </div>
+            <div class="login col-sm-6">
+                <h2>Login</h2>
+                <form action='/login' method='POST'>
+                    {% csrf_token %}
+                    E-Mail: <input type="email" id="eMail" name="txtUMail" class="form-control input-sm chat-input" placeholder="email address" />
+                    </br>
+                    Password: <input type="password" id="userPassword" name="txtUPWord" class="form-control input-sm chat-input" placeholder="password" />
+                    </br>
+                    <input type="submit" class="btn btn-btn-default btnToRight" id="btnSubmit" value="Submit" name="btnLogin">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

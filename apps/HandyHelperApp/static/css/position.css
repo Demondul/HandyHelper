@@ -1,0 +1,52 @@
+.container{
+    width: 100%px;
+}
+.registration, .error{
+    min-height: 1px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 20px;
+}
+.login{
+    min-height: 1px;
+    display: inline-block;
+}
+.inline-box{
+    display: inline-block;
+    margin: 10px;
+}
+.btnToRight{
+    float: right;
+}
+.left,.right{
+    min-height: 1px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 20px;
+}
+.author{
+    font-weight: bolder;
+}
+.quotes{
+    min-height: 75px;
+    position: relative;
+    border: 2px solid black;
+}
+.job-table{
+    min-height: 1px;
+    width: 55%;
+    border: 1px solid black;
+    vertical-align: top;
+}
+.my-jobs{
+    min-height: 1px;
+    width: 35%;
+    border: 1px solid black;
+    vertical-align: top;
+}
+.job-description{
+    border: 1px solid black;
+    background-color: white;
+    width: 450px;
+    min-height: 1px;
+}
